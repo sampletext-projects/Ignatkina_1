@@ -4,6 +4,10 @@ using namespace std;
 
 int main()
 {
+	setlocale(LC_ALL, "russian");
+	cout << "Программу сделала Игнаткина Валерия студент группы УТН-111" << "\n";
+	cout << "Программа вычисления периодической функции\n";
+	
 	double period = 1.5;
 	for (double x = -3; x <= 5; x += 0.2)
 	{
@@ -45,5 +49,6 @@ int main()
 
 		cout << x << " = " << result << endl;
 	}
+	system("pause");
 	return 0;
 }
