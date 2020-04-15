@@ -32,11 +32,11 @@ int main()
 
 		if (map_x >= 0 && map_x <= 1)
 		{
-			result = x * x;
+			result = map_x * map_x;
 		}
 		if (map_x >= 1 && map_x <= 1.5)
 		{
-			result = -x;
+			result = -map_x;
 		}
 
 		//эта штука нужна, чтобы сделать красивый вывод.
