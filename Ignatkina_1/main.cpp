@@ -7,9 +7,10 @@ int main()
 	setlocale(LC_ALL, "russian");
 	cout << "Программу сделала Игнаткина Валерия студент группы УТН-111" << "\n";
 	cout << "Программа вычисления периодической функции\n";
-	
+
 	double period = 1.5;
-	for (double x = -3; x <= 5; x += 0.2)
+	int periods = 0;
+	for (double x = -3; x <= 5; x += 0.5)
 	{
 		//эта штука нужна, чтобы сделать красивый вывод.
 		//без неё выводит вместо 0 очень маленькое число(погрешность округления)
@@ -21,13 +22,16 @@ int main()
 
 		double map_x = x; //значение x в пределах периода
 		double result = 0; //значение функции
+		periods = 0;
 		while (map_x < 0)
 		{
 			map_x += period;
+			periods--;
 		}
 		while (map_x > period)
 		{
 			map_x -= period;
+			periods++;
 		}
 
 		if (map_x >= 0 && map_x <= 1)
@@ -47,7 +51,8 @@ int main()
 			result = 0;
 		}
 
-		cout << x << " = " << result << endl;
+		cout << "y(" << x << ")" << " = " << "y(" << map_x << (periods > 0 ? " + " : " - ") << abs(periods) << "T" << ")" << " = " << result <<
+			endl;
 	}
 	system("pause");
 	return 0;
